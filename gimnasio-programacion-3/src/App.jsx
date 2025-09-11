@@ -1,12 +1,20 @@
-import './App.css'
+import { BrowserRouter, Routes, Route} from "react-router-dom";
+import Home from "./components/Home/Home"
+import Formulario from "./Formulario";
+
 
 function App() {
-
   return (
-    <>
-      <h1>hola</h1>
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route
+          path="/formulario"
+          element={<Formulario/>}
+        />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
