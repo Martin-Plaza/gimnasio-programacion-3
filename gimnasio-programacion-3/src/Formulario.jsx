@@ -1,6 +1,10 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 
-function Formulario({ plan }) {
+function Formulario() {
+  const location = useLocation();
+  const { plan } = location.state || {};
+
   const [nombre, setNombre] = useState("");
   const [email, setEmail] = useState("");
 
@@ -12,7 +16,9 @@ function Formulario({ plan }) {
   return (
     <div style={{ textAlign: "center", marginTop: "40px" }}>
       <h1>Formulario de Inscripción</h1>
-      <p>Plan seleccionado: <strong>{plan}</strong></p>
+      <p>
+        Plan seleccionado: <strong>{plan || "Ninguno"}</strong>
+      </p>
 
       <form
         onSubmit={handleSubmit}
