@@ -4,7 +4,6 @@ import { useLocation } from "react-router-dom";
 function Formulario() {
   const location = useLocation();
   const { plan } = location.state || {};
-
   const [nombre, setNombre] = useState("");
   const [email, setEmail] = useState("");
 
