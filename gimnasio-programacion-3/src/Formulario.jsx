@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Formulario.css"; // 👈 Importamos estilos
 
 function Formulario({ plan }) {
   const [nombre, setNombre] = useState("");
@@ -10,20 +11,13 @@ function Formulario({ plan }) {
   };
 
   return (
-    <div style={{ textAlign: "center", marginTop: "40px" }}>
+    <div className="formulario-container">
       <h1>Formulario de Inscripción</h1>
-      <p>Plan seleccionado: <strong>{plan}</strong></p>
+      <p className="plan-seleccionado">
+        Plan seleccionado: <strong>{plan}</strong>
+      </p>
 
-      <form
-        onSubmit={handleSubmit}
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "10px",
-          width: "300px",
-          margin: "auto",
-        }}
-      >
+      <form className="formulario" onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Tu nombre"
