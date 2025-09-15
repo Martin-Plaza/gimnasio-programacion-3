@@ -1,15 +1,15 @@
 const Planes = [{
-    name: "plan 1",
+    name: "Plan 1 basico",
     price: 35000,
     vecesSemana: 3,
     tipo: "basico"
 },{
-    name: "plan 2",
+    name: "Plan 2 premium",
     price: 40000,
     vecesSemana: 5,
     tipo: "premium"
 },{
-    name: "plan 3",
+    name: "Plan 3 ULTRA",
     price: 45000,
     vecesSemana: 1,
     tipo: "ULTRA"

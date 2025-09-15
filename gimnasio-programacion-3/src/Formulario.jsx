@@ -1,34 +1,38 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import "./Formulario.css"; // 👈 importa tu CSS acá
 
 function Formulario() {
   const location = useLocation();
   const { plan } = location.state || {};
+
   const [nombre, setNombre] = useState("");
   const [email, setEmail] = useState("");
+  const [dni, setDni] = useState("");
+  const [localidad, setLocalidad] = useState("");
+  const [telefono, setTelefono] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Inscripción enviada para ${nombre} (${email}) al plan ${plan}`);
+    alert(
+      `Inscripción enviada:\n
+      Nombre: ${nombre}\n
+      Email: ${email}\n
+      DNI: ${dni}\n
+      Localidad: ${localidad}\n
+      Teléfono: ${telefono}\n
+      Plan: ${plan || "Ninguno"}`
+    );
   };
 
   return (
-    <div style={{ textAlign: "center", marginTop: "40px" }}>
+    <div className="formulario-container">
       <h1>Formulario de Inscripción</h1>
-      <p>
+      <p className="plan-seleccionado">
         Plan seleccionado: <strong>{plan || "Ninguno"}</strong>
       </p>
 
-      <form
-        onSubmit={handleSubmit}
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "10px",
-          width: "300px",
-          margin: "auto",
-        }}
-      >
+      <form onSubmit={handleSubmit} className="formulario">
         <input
           type="text"
           placeholder="Tu nombre"
@@ -41,6 +45,27 @@ function Formulario() {
           placeholder="Tu email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <input
+          type="text"
+          placeholder="Tu DNI"
+          value={dni}
+          onChange={(e) => setDni(e.target.value)}
+          required
+        />
+        <input
+          type="text"
+          placeholder="Tu localidad"
+          value={localidad}
+          onChange={(e) => setLocalidad(e.target.value)}
+          required
+        />
+        <input
+          type="tel"
+          placeholder="Tu teléfono"
+          value={telefono}
+          onChange={(e) => setTelefono(e.target.value)}
           required
         />
         <button type="submit">Enviar</button>

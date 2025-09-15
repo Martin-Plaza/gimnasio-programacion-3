@@ -1,9 +1,13 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+import { BrowserRouter, Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Formulario from "./Formulario.jsx";
 import Login from "./components/Auth/Login.jsx";
 import Dashboard from "./components/Dashboard.jsx"; // área privada
 import ProtectedRoute from "./components/Routing/Protected/ProtectedRoute.jsx";
+
+
+
 
 function App() {
   return (
