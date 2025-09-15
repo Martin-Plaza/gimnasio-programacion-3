@@ -15,13 +15,13 @@
   content: "";
   position: fixed;
   top: 0;
-  left: 0;
+  left: 0%;
   width: 100%;
   height: 100%;
-  background-image: url('ruta-de-tu-imagen.jpg');
+  background-image: url('img/izquierda.jpg'),  url('img/derecha.jpg');
   background-repeat: no-repeat;
   background-position: left center, right center;
-  background-size: 200px 100%, 200px 100%; /* ancho de cada franja */
+  background-size: 706px 100%, 550px 100%; /* ancho de cada franja */
   z-index: -1; /* detrás del contenido */
 }
 
